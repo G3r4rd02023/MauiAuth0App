@@ -27,6 +27,21 @@
             <StackLayout
                 x:Name="HomeView"
                 IsVisible="false">
+                
+                <Image
+                x:Name="UserPictureImg"
+                SemanticProperties.Description="User's picture"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+                <Label 
+                x:Name="UsernameLbl"
+                Text=""
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="User's name"
+                FontSize="18"
+                HorizontalOptions="Center" />
+                
                 <Image
                  Source="dotnet_bot.png"                 
                  Aspect="AspectFit"

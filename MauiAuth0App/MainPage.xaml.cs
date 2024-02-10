@@ -19,6 +19,10 @@ namespace MauiAuth0App
 
             if (!loginResult.IsError)
             {
+                UsernameLbl.Text = loginResult.User.Identity!.Name;
+                UserPictureImg.Source = loginResult.User
+                .Claims.FirstOrDefault(c => c.Type == "picture")?.Value;
+
                 LoginView.IsVisible = false;
                 HomeView.IsVisible = true;
             }
