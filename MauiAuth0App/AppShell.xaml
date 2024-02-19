@@ -4,12 +4,21 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiAuth0App"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:pages ="clr-namespace:MauiAuth0App.Pages"
+    Shell.FlyoutBehavior="Flyout"
     Title="MauiAuth0App">
 
+    <Shell.FlyoutHeader>
+        <Image Source="dotnet_bot.svg" WidthRequest="120" Margin="10"></Image>
+    </Shell.FlyoutHeader>
+
     <ShellContent
-        Title="Home"
+        Icon="home.svg"
+        Title="Inicio"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    
+
 
 </Shell>

@@ -6,11 +6,15 @@
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
-            Spacing="25">
+            Spacing="25"
+            BackgroundColor="Black"
+            Margin="-20"
+            HeightRequest="600"
+            WidthRequest="330">
            
 
             <Label
-                Text="Hello, World!"
+                Text="Iniciar Sesion"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
@@ -27,6 +31,12 @@
             <StackLayout
                 x:Name="HomeView"
                 IsVisible="false">
+
+                <Ellipse Fill="Pink"
+                 HeightRequest="200"
+                 WidthRequest="200"
+                 Stroke="Red"
+                 StrokeThickness="10" />
                 
                 <Image
                 x:Name="UserPictureImg"
@@ -40,6 +50,7 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="User's name"
                 FontSize="18"
+                TextColor="LightPink"    
                 HorizontalOptions="Center" />
                 
                 <Image

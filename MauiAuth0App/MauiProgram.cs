@@ -1,4 +1,5 @@
 ﻿using MauiAuth0App.Auth0;
+using MauiAuth0App.Services;
 using Microsoft.Extensions.Logging;
 
 namespace MauiAuth0App
@@ -19,7 +20,11 @@ namespace MauiAuth0App
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<IServicioRoles, ServicioRoles>();
+            builder.Services.AddSingleton<IServicioInstituto, ServicioInstituto>();
+            builder.Services.AddSingleton<IServicioTipoPersona, ServicioTipoPersona>();
             builder.Services.AddSingleton<MainPage>();
+
 
             builder.Services.AddSingleton(new Auth0Client(new()
             {

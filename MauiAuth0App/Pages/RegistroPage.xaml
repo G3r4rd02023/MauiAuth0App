@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAuth0App.Pages.RegistroPage"
+             Title="RegistroPage">
+    <ScrollView>
+        <StackLayout Spacing="10" Padding="20">
+            <VerticalStackLayout
+                Padding="0,0,0,30"
+                Spacing="25"
+                BackgroundColor="#561d83">
+
+                <HorizontalStackLayout>
+                    
+                    <Image
+                        Source="dotnet_bot.png"
+                        HeightRequest="100"
+                        WidthRequest="200"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        SemanticProperties.Description="dot net bot in a race car number eight"
+                        Margin="-10" />
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout
+                    Spacing="20"
+                    BackgroundColor="White"
+                    Margin="-20"
+                    HeightRequest="600"
+                    WidthRequest="330">
+
+                   
+
+                    <Entry
+                        x:Name="TxtPrimerNombre"
+                        Margin="-10"
+                        BackgroundColor="White"
+                        Keyboard="Text"
+                        Placeholder="Primer nombre"
+                        PlaceholderColor="Gray"
+                        TextColor="Black" 
+                        />
+                                           
+
+                   
+
+                    <Entry
+                        x:Name="TxtSegundoNombre"
+                        BackgroundColor="White"
+                        Keyboard="Text"
+                        Placeholder="Segundo nombre"
+                        PlaceholderColor="Gray"
+                        TextColor="Black"
+                        Margin="-10"
+                        />
+
+                   
+
+                    <Entry
+                        x:Name="TxtPrimerApellido"
+                        BackgroundColor="White"
+                        Keyboard="Text"
+                        Placeholder="Primer apellido"
+                        PlaceholderColor="Gray"
+                        TextColor="Black"
+                        Margin="-10"
+                        />
+
+                   
+
+                    <Entry
+                        x:Name="TxtSegundoApellido"
+                        BackgroundColor="White"
+                        Keyboard="Text"
+                        Placeholder="Segundo apellido"
+                        PlaceholderColor="Gray"
+                        TextColor="Black"
+                        Margin="-10"
+                        />
+
+                    <Entry
+                        x:Name="TxtCorreo"
+                        BackgroundColor="White"
+                        Keyboard="Text"
+                        Placeholder="Correo Electronico"
+                        PlaceholderColor="Gray"
+                        TextColor="Black"
+                        Margin="-10"
+                        />
+
+                    <Label
+                        Margin="-2"
+                        Text="Fecha de Nacimiento:"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Start"
+                        SemanticProperties.HeadingLevel="Level1" 
+                        />
+
+                    <DatePicker
+                        x:Name="DpFechaNacimiento"                        
+                        BackgroundColor="White"                                             
+                        TextColor="Black"
+                        Margin="-10"/>
+
+                    <Label
+                        Margin="-2"
+                        Text="Género:"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Start"
+                        SemanticProperties.HeadingLevel="Level1" />
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Label
+                            Text="M:"
+                            TextColor="White"/>
+
+                        <CheckBox
+                            x:Name="ChkMasculino"
+                            Color="White"
+                            Margin="-10"/>
+
+                        <Label
+                            Text="F:"
+                            TextColor="White"/>
+
+                        <CheckBox
+                            x:Name="ChkFemenino"
+                            Color="White"
+                            Margin="-10"/>
+                    </HorizontalStackLayout>
+
+                    <Picker x:Name="pickerRol" Title="Seleccionar Rol" Margin="-10" TextColor="Black"/>
+                    <Picker x:Name="pickerInstituto" Title="Seleccionar Instituto" Margin="-10" TextColor="Black"/>
+                    <Picker x:Name="pickerTipoPersona" Title="Seleccionar Tipo de Persona" Margin="-10" TextColor="Black"/>
+
+                    <Button
+                        Text="Registrar" 
+                        Clicked="RegistrarUsuario"
+                        HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
