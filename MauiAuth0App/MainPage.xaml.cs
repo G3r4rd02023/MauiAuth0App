@@ -31,17 +31,16 @@ namespace MauiAuth0App
             var loginResult = await auth0Client.LoginAsync();
 
             if (!loginResult.IsError)
-            {                                                               
-                    // Es el primer inicio de sesión, redirige al usuario a la página de registro
-                   
-                    UsernameLbl.Text = loginResult.User.Identity!.Name;
-                    var usuario = UsernameLbl.Text;
-                    UserPictureImg.Source = loginResult.User
-                    .Claims.FirstOrDefault(c => c.Type == "picture")?.Value;
+            {
+
+                UsernameLbl.Text = loginResult.User.Identity!.Name;
+                var usuario = UsernameLbl.Text;
+                UserPictureImg.Source = loginResult.User
+                .Claims.FirstOrDefault(c => c.Type == "picture")?.Value;
 
                 bool isFirstLogin = await _servicioUsuario.ValidarPrimerLogin(usuario!);
 
-                if(isFirstLogin)
+                if (isFirstLogin)
                 {
                     await Navigation.PushAsync(new RegistroPage(_servicioRoles, _servicioInstituto, _servicioTipoPersona));
                     LoginView.IsVisible = false;
@@ -52,10 +51,6 @@ namespace MauiAuth0App
                     LoginView.IsVisible = false;
                     HomeView.IsVisible = true;
                 }
-                   
-                
-                   
-               
             }
             else
             {
