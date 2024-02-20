@@ -11,16 +11,18 @@ namespace MauiAuth0App
         private readonly IServicioRoles _servicioRoles;
         private readonly IServicioInstituto _servicioInstituto;
         private readonly IServicioTipoPersona _servicioTipoPersona;
+        private readonly IServicioUsuario _servicioUsuario;
 
 
         public MainPage(Auth0Client client, IServicioRoles servicioRoles, IServicioInstituto servicioInstituto,
-            IServicioTipoPersona servicioTipoPersona)
+            IServicioTipoPersona servicioTipoPersona, IServicioUsuario servicioUsuario)
         {
             InitializeComponent();
             auth0Client = client;
             _servicioRoles = servicioRoles;
             _servicioInstituto = servicioInstituto;
             _servicioTipoPersona = servicioTipoPersona;
+            _servicioUsuario = servicioUsuario;
         }
 
 
@@ -29,22 +31,31 @@ namespace MauiAuth0App
             var loginResult = await auth0Client.LoginAsync();
 
             if (!loginResult.IsError)
-            {
-                var isNewUser = loginResult.User.Claims.FirstOrDefault(c => c.Type == "isNewUser")?.Value == "true";
-
-                if (isNewUser)
-                {
+            {                                                               
                     // Es el primer inicio de sesión, redirige al usuario a la página de registro
-                    await Navigation.PushAsync(new RegistroPage(_servicioRoles, _servicioInstituto, _servicioTipoPersona));
-                }
-                else
-                {
+                   
                     UsernameLbl.Text = loginResult.User.Identity!.Name;
+                    var usuario = UsernameLbl.Text;
                     UserPictureImg.Source = loginResult.User
-                    .Claims.FirstOrDefault(c => c.Type == "picture")?.Value;                    
+                    .Claims.FirstOrDefault(c => c.Type == "picture")?.Value;
+
+                bool isFirstLogin = await _servicioUsuario.ValidarPrimerLogin(usuario!);
+
+                if(isFirstLogin)
+                {
+                    await Navigation.PushAsync(new RegistroPage(_servicioRoles, _servicioInstituto, _servicioTipoPersona));
                     LoginView.IsVisible = false;
                     HomeView.IsVisible = true;
                 }
+                else
+                {
+                    LoginView.IsVisible = false;
+                    HomeView.IsVisible = true;
+                }
+                   
+                
+                   
+               
             }
             else
             {

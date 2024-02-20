@@ -6,8 +6,7 @@
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
-            Spacing="25"
-            BackgroundColor="Black"
+            Spacing="25"            
             Margin="-20"
             HeightRequest="600"
             WidthRequest="330">
@@ -31,13 +30,7 @@
             <StackLayout
                 x:Name="HomeView"
                 IsVisible="false">
-
-                <Ellipse Fill="Pink"
-                 HeightRequest="200"
-                 WidthRequest="200"
-                 Stroke="Red"
-                 StrokeThickness="10" />
-                
+                               
                 <Image
                 x:Name="UserPictureImg"
                 SemanticProperties.Description="User's picture"

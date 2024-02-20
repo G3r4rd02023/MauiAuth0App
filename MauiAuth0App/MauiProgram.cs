@@ -23,6 +23,8 @@ namespace MauiAuth0App
             builder.Services.AddSingleton<IServicioRoles, ServicioRoles>();
             builder.Services.AddSingleton<IServicioInstituto, ServicioInstituto>();
             builder.Services.AddSingleton<IServicioTipoPersona, ServicioTipoPersona>();
+            builder.Services.AddSingleton<IServicioUsuario, ServicioUsuario>();
+
             builder.Services.AddSingleton<MainPage>();
 
 
