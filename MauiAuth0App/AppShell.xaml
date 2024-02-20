@@ -18,7 +18,11 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
-    
+    <ShellContent
+        Icon="clipboard.svg"
+        Title="Usuarios"
+        ContentTemplate="{DataTemplate pages:UsuariosPage}"
+        Route="UsuariosPage" />
 
 
 

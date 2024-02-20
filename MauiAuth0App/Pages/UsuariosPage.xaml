@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAuth0App.Pages.UsuariosPage"           
+             Title="Usuarios">
+
+    <VerticalStackLayout>
+        <ActivityIndicator x:Name="loading" HeightRequest="30" Color="Blue" IsRunning="True" 
+                           IsVisible="false"/>
+
+        <!-- Encabezados -->
+        <StackLayout Orientation="Horizontal" Padding="10">
+            <Label Text="Marca" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+            <Label Text="Modelo" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+            <Label Text="Capacidad" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+        </StackLayout>
+
+        <!-- Datos -->
+        <ListView x:Name="listViewUsuarios">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!-- Puedes dejar este espacio en blanco o personalizar el encabezado si lo deseas -->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Nombre}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                            <Label Text="{Binding CorreoElectronico}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                            <Label Text="{Binding Estado}" VerticalTextAlignment="Center" Margin="10,0,0,0"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+
+    
+    
+    
+</ContentPage>

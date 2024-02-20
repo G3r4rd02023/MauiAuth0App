@@ -34,7 +34,7 @@ namespace MauiAuth0App
             {
 
                 UsernameLbl.Text = loginResult.User.Identity!.Name;
-                var usuario = UsernameLbl.Text;
+                var usuario = UsernameLbl.Text;                
                 UserPictureImg.Source = loginResult.User
                 .Claims.FirstOrDefault(c => c.Type == "picture")?.Value;
 
@@ -42,7 +42,7 @@ namespace MauiAuth0App
 
                 if (isFirstLogin)
                 {
-                    await Navigation.PushAsync(new RegistroPage(_servicioRoles, _servicioInstituto, _servicioTipoPersona));
+                    await Navigation.PushAsync(new RegistroPage(_servicioRoles, _servicioInstituto, _servicioTipoPersona,usuario!));
                     LoginView.IsVisible = false;
                     HomeView.IsVisible = true;
                 }

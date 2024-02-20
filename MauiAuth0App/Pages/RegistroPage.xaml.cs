@@ -9,13 +9,16 @@ public partial class RegistroPage : ContentPage
     private readonly IServicioRoles _servicioRoles;
     private readonly IServicioInstituto _servicioInstituto;
     private readonly IServicioTipoPersona _servicioTipoPersona;
+    private readonly string _usuario;
 
-    public RegistroPage(IServicioRoles servicioRoles, IServicioInstituto servicioInstituto, IServicioTipoPersona servicioTipoPersona)
+    public RegistroPage(IServicioRoles servicioRoles, IServicioInstituto servicioInstituto, IServicioTipoPersona servicioTipoPersona,
+        string usuario)
     {
         InitializeComponent();
         _servicioRoles = servicioRoles;
         _servicioInstituto = servicioInstituto;
         _servicioTipoPersona = servicioTipoPersona;
+        _usuario = usuario;
         CargarRoles();
         CargarInstitutos();
         CargarTipoPersonas();
@@ -67,7 +70,7 @@ public partial class RegistroPage : ContentPage
 
     private async void RegistrarUsuario(object sender, EventArgs e)
     {
-
+       
         // Obtener los valores ingresados por el usuario
         string primerNombre = TxtPrimerNombre.Text;
         string segundoNombre = TxtSegundoNombre.Text;
@@ -78,7 +81,7 @@ public partial class RegistroPage : ContentPage
         int idRol = await _servicioRoles.ObtenerIdRolPorNombre(pickerRol.SelectedItem.ToString());
         int idInstituto = await _servicioInstituto.ObtenerIdInstitutoPorNombre(pickerInstituto.SelectedItem.ToString());
         int idTipoPersona = await _servicioTipoPersona.ObtenerIdTipoPersonaPorNombre(pickerTipoPersona.SelectedItem.ToString());
-        string usuario = TxtCorreo.Text;
+        string usuario = _usuario;
 
 
 
@@ -103,7 +106,7 @@ public partial class RegistroPage : ContentPage
             IdInstituto = idInstituto,
             IdTipoPersona = idTipoPersona,
             Usuario = usuario,
-            NombreUsuario = primerNombre + " " + primerApellido,
+            NombreUsuario = usuario,
             CorreoElectronico = usuario,
             Contraseña = "hsdfgjhgfjbfxsl",
             Estado = "Nuevo",

@@ -33,12 +33,14 @@ namespace MauiAuth0App.Services
 
             if (usuarioEncontrado != null && usuarioEncontrado.Estado == "Nuevo")
             {                
+                //accede directamente a menu
                 return false; 
             }
             else
             {
+                //envia a registro
                 return true; 
             }
-        }
+        }        
     }
 }
