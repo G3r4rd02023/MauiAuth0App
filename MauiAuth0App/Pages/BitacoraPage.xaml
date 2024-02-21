@@ -4,28 +4,32 @@
              xmlns:viewModels="clr-namespace:MauiAuth0App.ViewModels"
              x:Class="MauiAuth0App.Pages.BitacoraPage"
              Title="BitacoraPage">
+    
     <ContentPage.BindingContext>
         <viewModels:BitacoraViewModel />
     </ContentPage.BindingContext>
 
+    
     <ContentPage.Content>
-        <StackLayout>
-            <CollectionView ItemsSource="{Binding Bitacoras}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="10" Orientation="Horizontal" BackgroundColor="LightGray" Margin="5">
-                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Label Text="{Binding IdUsuario}" FontAttributes="Bold" HorizontalOptions="Center" />
-                                <Label Text="{Binding IdInstituto}" HorizontalOptions="Center" />
-                                <Label Text="{Binding TipoAccion}" HorizontalOptions="Center" />
-                                <Label Text="{Binding Tabla}" HorizontalOptions="Center" />
-                                <Label Text="{Binding Fecha}" HorizontalOptions="Center" />
+        <ScrollView>
+            <StackLayout>
+                <CollectionView ItemsSource="{Binding Bitacoras}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Orientation="Horizontal" BackgroundColor="LightGray" Margin="5">
+                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding IdUsuario}" FontAttributes="Bold" HorizontalOptions="Center" />
+                                    <Label Text="{Binding IdInstituto}" HorizontalOptions="Center" />
+                                    <Label Text="{Binding TipoAccion}" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Tabla}" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Fecha}" HorizontalOptions="Center" />
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 

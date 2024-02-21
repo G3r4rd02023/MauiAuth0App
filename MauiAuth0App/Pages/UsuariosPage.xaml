@@ -10,22 +10,24 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout>
-            <CollectionView ItemsSource="{Binding Usuarios}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="10" Orientation="Horizontal" BackgroundColor="LightGray" Margin="5">
-                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                <Label Text="{Binding NombreUsuario}" FontAttributes="Bold" HorizontalOptions="Center" />
-                                <Label Text="{Binding CorreoElectronico}" HorizontalOptions="Center" />
-                                <Label Text="{Binding Estado}" HorizontalOptions="Center" />
-                                <Label Text="{Binding FechaUltimaConexion}" HorizontalOptions="Center" />
+        <ScrollView>
+            <StackLayout>
+                <CollectionView ItemsSource="{Binding Usuarios}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Orientation="Horizontal" BackgroundColor="LightGray" Margin="5">
+                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding NombreUsuario}" FontAttributes="Bold" HorizontalOptions="Center" />
+                                    <Label Text="{Binding CorreoElectronico}" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Estado}" HorizontalOptions="Center" />
+                                    <Label Text="{Binding FechaUltimaConexion}" HorizontalOptions="Center" />
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 

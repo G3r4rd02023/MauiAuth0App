@@ -47,7 +47,7 @@
                 HorizontalOptions="Center" />
                 
                 <Image
-                 Source="dotnet_bot.png"                 
+                 Source="logoambe.jpg"                 
                  Aspect="AspectFit"
                  SemanticProperties.Description="Cute dot net bot waving hi to you!"
                  HeightRequest="200"

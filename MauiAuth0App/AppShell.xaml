@@ -8,13 +8,15 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MauiAuth0App">
 
+    
     <Shell.FlyoutHeader>
-        <Image Source="dotnet_bot.svg" WidthRequest="120" Margin="10"></Image>
+        <Image Source="logoambe.jpg" WidthRequest="120" Margin="10" BackgroundColor="MediumPurple"></Image>
     </Shell.FlyoutHeader>
+   
 
     <ShellContent
         Icon="home.svg"
-        Title="Inicio"
+        Title="Inicio"        
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
@@ -25,7 +27,7 @@
         Route="UsuariosPage" />
 
     <ShellContent
-         Icon="stand_by.svg"
+         Icon="ticket.svg"
          Title="Bitacora"
          ContentTemplate="{DataTemplate pages:BitacoraPage}"
          Route="BitacoraPage" />
