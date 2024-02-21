@@ -6,6 +6,6 @@ namespace MauiAuth0App.Services
     {
         Task<bool> ValidarPrimerLogin(string usuario);
 
-        Task<List<UsuariosViewModel>> ObtenerLista();
+        Task<List<Usuarios>> ObtenerLista();
     }
 }

@@ -7,7 +7,7 @@ namespace MauiAuth0App.Services
     {
         private string urlApi = "http://ambetest.somee.com/api/Usuarios";
 
-        public async Task<List<UsuariosViewModel>> ObtenerLista()
+        public async Task<List<Usuarios>> ObtenerLista()
         {
             var client = new HttpClient();
             var response = await client.GetAsync(urlApi);
@@ -15,14 +15,14 @@ namespace MauiAuth0App.Services
             {
                 var responseBody = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseBody);
-                var usuariosData = JsonSerializer.Deserialize<List<UsuariosViewModel>>(responseBody);
+                var usuariosData = JsonSerializer.Deserialize<List<Usuarios>>(responseBody);
                 return usuariosData;
             }
             else
             {
                 // Manejar el caso cuando la solicitud no es exitosa.
                 Console.WriteLine($"Error en la solicitud: {response.StatusCode}");
-                return new List<UsuariosViewModel>();
+                return new List<Usuarios>();
             }
         }
         public async Task<bool> ValidarPrimerLogin(string usuario)

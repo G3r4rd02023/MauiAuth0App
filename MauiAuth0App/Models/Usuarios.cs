@@ -2,7 +2,7 @@
 
 namespace MauiAuth0App.Models
 {
-    public class UsuariosViewModel
+    public class Usuarios
     {
         [JsonPropertyName("idUsuario")]
         public int IdUsuario { get; set; }
@@ -31,6 +31,6 @@ namespace MauiAuth0App.Models
         [JsonPropertyName("fechaUltimaConexion")]
         public DateTime? FechaUltimaConexion { get; set; }
 
-
+        
     }
 }
