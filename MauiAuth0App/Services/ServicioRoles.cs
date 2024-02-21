@@ -6,8 +6,13 @@ namespace MauiAuth0App.Services
     public class ServicioRoles:IServicioRoles
     {
         private string urlApi = "http://ambetest.somee.com/api/Roles";
+        private readonly IServicioUsuario _servicioUsuario;
 
-       
+        public ServicioRoles(IServicioUsuario servicioUsuario)
+        {
+            _servicioUsuario = servicioUsuario;
+        }
+
         public async Task<List<RolesViewModel>> ObtenerLista()
         {
             var client = new HttpClient();
@@ -48,6 +53,20 @@ namespace MauiAuth0App.Services
             }
         }
 
+        public async Task<int> ObtenerIdUsuario(string usuario)
+        {
+            try
+            {
+                var usuarios = await _servicioUsuario.ObtenerLista();
+                var user = usuarios.FirstOrDefault(u => u.Usuario == usuario);
+                return user != null ? user.IdUsuario : -1;
+            }
+            catch (Exception ex)
+            {
 
+                Console.WriteLine($"Error al obtener los usuarios: {ex.Message}");
+                return -1;
+            }
+        }
     }
 }

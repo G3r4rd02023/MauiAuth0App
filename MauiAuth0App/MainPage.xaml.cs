@@ -51,6 +51,8 @@ namespace MauiAuth0App
                     LoginView.IsVisible = false;
                     HomeView.IsVisible = true;
                 }
+                int idUsuario = await _servicioRoles.ObtenerIdUsuario(usuario!);
+                ServicioBitacora.AgregarRegistro(idUsuario, 1, "Inicio Sesión", "Sistema");
             }
             else
             {

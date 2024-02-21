@@ -23,7 +23,12 @@
         Title="Usuarios"
         ContentTemplate="{DataTemplate pages:UsuariosPage}"
         Route="UsuariosPage" />
-    
+
+    <ShellContent
+         Icon="stand_by.svg"
+         Title="Bitacora"
+         ContentTemplate="{DataTemplate pages:BitacoraPage}"
+         Route="BitacoraPage" />
     
     <MenuItem IconImageSource="stand_by.svg" Text="Cerrar Sesión" Clicked="CerrarSesion_Clicked">
     </MenuItem>

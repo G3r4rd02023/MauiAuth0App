@@ -8,8 +8,8 @@ public partial class UsuariosPage : ContentPage
 {
 
     private readonly UsuariosViewModel _viewModel;
-    
-   
+
+
     public UsuariosPage()
     {
         InitializeComponent();
@@ -30,6 +30,7 @@ public partial class UsuariosPage : ContentPage
         var response = await httpClient.GetAsync("http://ambetest.somee.com/api/Usuarios");
         response.EnsureSuccessStatusCode();
         var responseBody = await response.Content.ReadAsStringAsync();
+
         return JsonSerializer.Deserialize<List<Usuarios>>(responseBody);
     }
 }

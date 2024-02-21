@@ -127,7 +127,11 @@ public partial class RegistroPage : ContentPage
         if (response.IsSuccessStatusCode)
         {
             await DisplayAlert("Éxito", "Usuario registrado correctamente", "OK");
-            // Aquí podrías redirigir a otra página o realizar otra acción después del registro exitoso
+
+            int idUsuario = await _servicioRoles.ObtenerIdUsuario(_usuario);
+
+            ServicioBitacora.AgregarRegistro(idUsuario,idInstituto,"Registro","Usuario");
+            
         }
         else
         {

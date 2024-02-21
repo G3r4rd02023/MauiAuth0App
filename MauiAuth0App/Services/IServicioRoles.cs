@@ -8,5 +8,7 @@ namespace MauiAuth0App.Services
 
         Task<int> ObtenerIdRolPorNombre(string nombreRol);
 
+        Task<int> ObtenerIdUsuario(string usuario);
+
     }
 }
