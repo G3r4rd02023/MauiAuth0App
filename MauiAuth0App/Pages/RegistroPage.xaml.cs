@@ -8,7 +8,7 @@ public partial class RegistroPage : ContentPage
 {
     private readonly IServicioRoles _servicioRoles;
     private readonly IServicioInstituto _servicioInstituto;
-    private readonly IServicioTipoPersona _servicioTipoPersona;
+    private readonly IServicioTipoPersona _servicioTipoPersona;   
     private readonly string _usuario;
 
     public RegistroPage(IServicioRoles servicioRoles, IServicioInstituto servicioInstituto, IServicioTipoPersona servicioTipoPersona,
@@ -131,7 +131,9 @@ public partial class RegistroPage : ContentPage
             int idUsuario = await _servicioRoles.ObtenerIdUsuario(_usuario);
 
             ServicioBitacora.AgregarRegistro(idUsuario,idInstituto,"Registro","Usuario");
-            
+
+            await Navigation.PushAsync(new UsuariosPage());
+
         }
         else
         {

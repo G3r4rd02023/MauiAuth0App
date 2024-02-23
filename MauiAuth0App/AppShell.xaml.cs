@@ -1,5 +1,4 @@
-﻿using MauiAuth0App.Auth0;
-using MauiAuth0App.Pages;
+﻿using MauiAuth0App.Pages;
 
 namespace MauiAuth0App
 {

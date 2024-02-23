@@ -9,11 +9,12 @@
             Spacing="25"            
             Margin="-20"
             HeightRequest="600"
-            WidthRequest="330">
+            WidthRequest="330"
+            BackgroundColor="MediumPurple">
            
 
             <Label
-                Text="Iniciar Sesion"
+                Text=""
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
@@ -21,12 +22,22 @@
              x:Name="LoginView">
                 <Button 
              x:Name="LoginBtn"
-             Text="Log In"
+             Text="Iniciar Sesion"
              SemanticProperties.Hint="Click to log in"
              Clicked="OnLoginClicked"
-             HorizontalOptions="Center" />
+             HorizontalOptions="Center"/>
+
+                <Image
+             Source="logoambe.jpg"                 
+             Aspect="AspectFit"
+             SemanticProperties.Description="Cute dot net bot waving hi to you!"
+             HeightRequest="300"
+             HorizontalOptions="Center" />      
+
+
             </StackLayout>
 
+           
             <StackLayout
                 x:Name="HomeView"
                 IsVisible="false">

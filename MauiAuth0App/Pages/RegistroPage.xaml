@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAuth0App.Pages.RegistroPage"
-             Title="RegistroPage">
+             Title="Registro">
     <ScrollView>
         <StackLayout Spacing="10" Padding="20">
             <VerticalStackLayout
@@ -13,7 +13,7 @@
                 <HorizontalStackLayout>
                     
                     <Image
-                        Source="dotnet_bot.png"
+                        Source="logoambe.jpg"
                         HeightRequest="100"
                         WidthRequest="200"
                         HorizontalOptions="Center"
@@ -112,20 +112,20 @@
                     <HorizontalStackLayout Spacing="10">
                         <Label
                             Text="M:"
-                            TextColor="White"/>
+                            TextColor="Black"/>
 
                         <CheckBox
                             x:Name="ChkMasculino"
-                            Color="White"
+                            Color="Black"
                             Margin="-10"/>
 
                         <Label
                             Text="F:"
-                            TextColor="White"/>
+                            TextColor="Black"/>
 
                         <CheckBox
                             x:Name="ChkFemenino"
-                            Color="White"
+                            Color="Black"
                             Margin="-10"/>
                     </HorizontalStackLayout>
 
