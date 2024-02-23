@@ -10,5 +10,7 @@ namespace MauiAuth0App.Services
 
         Task<int> ObtenerIdUsuario(string usuario);
 
+        Task<bool> UsuarioExiste(string usuario);
+
     }
 }

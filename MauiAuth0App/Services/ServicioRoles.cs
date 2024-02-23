@@ -68,5 +68,29 @@ namespace MauiAuth0App.Services
                 return -1;
             }
         }
+
+        public async Task<bool> UsuarioExiste(string usuario)
+        {
+            try
+            {
+                var usuarios = await _servicioUsuario.ObtenerLista();
+                var user = usuarios.FirstOrDefault(u => u.Usuario == usuario);
+               
+                if (user != null)
+                {                   
+                    return true;
+                }
+                else
+                {                    
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {               
+                Console.WriteLine($"Error al obtener los usuarios: {ex.Message}");
+                return false;
+            }
+        }
+
     }
 }
