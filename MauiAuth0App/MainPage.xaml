@@ -10,7 +10,7 @@
             Margin="-20"
             HeightRequest="600"
             WidthRequest="330"
-            BackgroundColor="MediumPurple">
+            BackgroundColor="White">
            
 
             <Label
@@ -25,10 +25,11 @@
              Text="Iniciar Sesion"
              SemanticProperties.Hint="Click to log in"
              Clicked="OnLoginClicked"
+                    BackgroundColor="Purple"
              HorizontalOptions="Center"/>
 
                 <Image
-             Source="logoambe.jpg"                 
+             Source="ramgarlogo.jpg"                 
              Aspect="AspectFit"
              SemanticProperties.Description="Cute dot net bot waving hi to you!"
              HeightRequest="300"
@@ -58,7 +59,7 @@
                 HorizontalOptions="Center" />
                 
                 <Image
-                 Source="logoambe.jpg"                 
+                 Source="ramgarlogo.jpg"                 
                  Aspect="AspectFit"
                  SemanticProperties.Description="Cute dot net bot waving hi to you!"
                  HeightRequest="200"

@@ -61,7 +61,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\logoambe.jpg" />
+	  <None Remove="Resources\Images\ramgarlogo.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
