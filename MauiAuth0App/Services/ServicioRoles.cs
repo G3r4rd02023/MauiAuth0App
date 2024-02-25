@@ -1,4 +1,5 @@
 ﻿using MauiAuth0App.Models;
+using MauiAuth0App.ViewModels;
 using System.Text.Json;
 
 namespace MauiAuth0App.Services
@@ -13,7 +14,7 @@ namespace MauiAuth0App.Services
             _servicioUsuario = servicioUsuario;
         }
 
-        public async Task<List<RolesViewModel>> ObtenerLista()
+        public async Task<List<Roles>> ObtenerLista()
         {
             var client = new HttpClient();
             var response = await client.GetAsync(urlApi);
@@ -21,14 +22,14 @@ namespace MauiAuth0App.Services
             {
                 var responseBody = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(responseBody);
-                var rolesData = JsonSerializer.Deserialize<List<RolesViewModel>>(responseBody);
+                var rolesData = JsonSerializer.Deserialize<List<Roles>>(responseBody);
                 return rolesData;
             }
             else
             {
                 // Manejar el caso cuando la solicitud no es exitosa.
                 Console.WriteLine($"Error en la solicitud: {response.StatusCode}");
-                return new List<RolesViewModel>();
+                return new List<Roles>();
             }
         }
 
@@ -92,5 +93,27 @@ namespace MauiAuth0App.Services
             }
         }
 
+        public async Task<bool> RolExiste(string nombreRol)
+        {
+            try
+            {
+                var roles = await ObtenerLista();
+                var rolEncontrado = roles.FirstOrDefault(u => u.Descripcion == nombreRol);
+
+                if (rolEncontrado != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener los roles: {ex.Message}");
+                return false;
+            }
+        }
     }
 }

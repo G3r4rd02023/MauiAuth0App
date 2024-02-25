@@ -31,7 +31,13 @@
          Title="Bitacora"
          ContentTemplate="{DataTemplate pages:BitacoraPage}"
          Route="BitacoraPage" />
-    
+
+    <ShellContent
+         Icon="ticket.svg"
+         Title="Roles"
+         ContentTemplate="{DataTemplate pages:RolesPage}"
+         Route="RolesPage" />
+
     <MenuItem IconImageSource="stand_by.svg" Text="Cerrar Sesión" Clicked="CerrarSesion_Clicked">
     </MenuItem>
 

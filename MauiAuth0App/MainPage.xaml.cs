@@ -12,7 +12,7 @@ namespace MauiAuth0App
         private readonly IServicioInstituto _servicioInstituto;
         private readonly IServicioTipoPersona _servicioTipoPersona;
         private readonly IServicioUsuario _servicioUsuario;
-
+        public static string? UsuarioAutenticado { get; set; }
 
         public MainPage(Auth0Client client, IServicioRoles servicioRoles, IServicioInstituto servicioInstituto,
             IServicioTipoPersona servicioTipoPersona, IServicioUsuario servicioUsuario)
@@ -34,6 +34,7 @@ namespace MauiAuth0App
             {
 
                 UsernameLbl.Text = loginResult.User.Identity!.Name;
+                UsuarioAutenticado = loginResult.User.Identity!.Name;
                 var usuario = UsernameLbl.Text;                
                 UserPictureImg.Source = loginResult.User
                 .Claims.FirstOrDefault(c => c.Type == "picture")?.Value;

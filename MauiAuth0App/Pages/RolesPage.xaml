@@ -2,27 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:MauiAuth0App.ViewModels"
-             x:Class="MauiAuth0App.Pages.BitacoraPage"
-             Title="Bitacora">
-    
+             x:Class="MauiAuth0App.Pages.RolesPage"
+             Title="RolesPage">
+
     <ContentPage.BindingContext>
-        <viewModels:BitacoraViewModel />
+        <viewModels:RolesViewModel />
     </ContentPage.BindingContext>
 
-    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <CollectionView ItemsSource="{Binding Bitacoras}">
+                <CollectionView ItemsSource="{Binding Roles}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Padding="10" Orientation="Horizontal" BackgroundColor="LightGray" Margin="5">
                                 <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Label Text="{Binding IdUsuario}" FontAttributes="Bold" HorizontalOptions="Center" />
-                                    <Label Text="{Binding IdInstituto}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding TipoAccion}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding Tabla}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding Fecha}" HorizontalOptions="Center" />
+                                    <Label Text="{Binding IdInstituto}" FontAttributes="Bold" HorizontalOptions="Center" />
+                                    <Label Text="{Binding Descripcion}" HorizontalOptions="Center" />
                                 </StackLayout>
                             </StackLayout>
                         </DataTemplate>
@@ -32,5 +28,5 @@
         </ScrollView>
     </ContentPage.Content>
 
-
+    
 </ContentPage>

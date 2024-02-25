@@ -40,9 +40,7 @@
                         PlaceholderColor="Gray"
                         TextColor="Black" 
                         />
-                                           
-
-                   
+                                                             
 
                     <Entry
                         x:Name="TxtSegundoNombre"
