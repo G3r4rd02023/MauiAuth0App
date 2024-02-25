@@ -24,7 +24,7 @@ public partial class BitacoraPage : ContentPage
     private async Task<List<Bitacora>> ObtenerBitacora()
     {
         var httpClient = new HttpClient();
-        var response = await httpClient.GetAsync("http://ambetest.somee.com/api/Bitacora");
+        var response = await httpClient.GetAsync("https://ambetest.somee.com/api/Bitacora");
         response.EnsureSuccessStatusCode();
         var responseBody = await response.Content.ReadAsStringAsync();
 

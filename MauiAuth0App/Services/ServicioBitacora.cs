@@ -20,7 +20,7 @@ namespace MauiAuth0App.Services
 
             var jsonBitacora = JsonSerializer.Serialize(registro);
             using var httpClient = new HttpClient();
-            var apiUrl = "http://ambetest.somee.com/api/Bitacora";
+            var apiUrl = "https://ambetest.somee.com/api/Bitacora";
             try
             {
 

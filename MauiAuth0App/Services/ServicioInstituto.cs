@@ -1,32 +1,27 @@
 ﻿using MauiAuth0App.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace MauiAuth0App.Services
 {
     public class ServicioInstituto : IServicioInstituto
     {
-        private string urlApi = "http://ambetest.somee.com/api/Institutos";
+        private string urlApi = "https://ambetest.somee.com/api/Institutos";
         public async Task<int> ObtenerIdInstitutoPorNombre(string nombreInstituto)
         {
             try
             {
-               
+
                 var institutos = await ObtenerLista();
 
-                
+
                 var instituto = institutos.FirstOrDefault(r => r.NombreInstituto == nombreInstituto);
 
-                
+
                 return instituto != null ? instituto.IdInstituto : -1;
             }
             catch (Exception ex)
             {
-                
+
                 Console.WriteLine($"Error al obtener los roles: {ex.Message}");
                 return -1;
             }
