@@ -6,7 +6,7 @@ namespace MauiAuth0App.Services
 {
     public class ServicioRoles:IServicioRoles
     {
-        private string urlApi = "http://ambetest.somee.com/api/Roles";
+        private string urlApi = "https://ambetest.somee.com/api/Roles";
         private readonly IServicioUsuario _servicioUsuario;
 
         public ServicioRoles(IServicioUsuario servicioUsuario)

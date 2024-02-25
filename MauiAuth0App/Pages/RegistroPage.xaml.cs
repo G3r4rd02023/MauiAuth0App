@@ -161,7 +161,7 @@ public partial class RegistroPage : ContentPage
                 // Enviar los datos del usuario a través de una API
                 var httpClient = new HttpClient();
                 var content = new StringContent(personaJson, Encoding.UTF8, "application/json");
-                HttpResponseMessage response = await httpClient.PostAsync("http://ambetest.somee.com/api/Usuarios", content);
+                HttpResponseMessage response = await httpClient.PostAsync("https://ambetest.somee.com/api/Usuarios", content);
 
                 // Verificar si la solicitud fue exitosa
                 if (response.IsSuccessStatusCode)

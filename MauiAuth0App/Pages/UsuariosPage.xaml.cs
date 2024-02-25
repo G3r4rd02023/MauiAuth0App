@@ -27,7 +27,7 @@ public partial class UsuariosPage : ContentPage
     private async Task<List<Usuarios>> ObtenerUsuarios()
     {
         var httpClient = new HttpClient();
-        var response = await httpClient.GetAsync("http://ambetest.somee.com/api/Usuarios");
+        var response = await httpClient.GetAsync("https://ambetest.somee.com/api/Usuarios");
         response.EnsureSuccessStatusCode();
         var responseBody = await response.Content.ReadAsStringAsync();
 

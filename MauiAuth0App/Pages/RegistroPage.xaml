@@ -6,14 +6,14 @@
     <ScrollView>
         <StackLayout Spacing="10" Padding="20">
             <VerticalStackLayout
-                Padding="0,0,0,30"
-                Spacing="25"
-                BackgroundColor="#561d83">
+                Padding="0,0,0,5"
+                Spacing="15"
+                BackgroundColor="purple">
 
                 <HorizontalStackLayout>
                     
                     <Image
-                        Source="logoambe.jpg"
+                        Source="ramgarlogo .jpg"
                         HeightRequest="100"
                         WidthRequest="200"
                         HorizontalOptions="Center"
@@ -132,9 +132,10 @@
                     <Picker x:Name="pickerTipoPersona" Title="Seleccionar Tipo de Persona" Margin="-10" TextColor="Black"/>
 
                     <Button
-                        Text="Registrar" 
-                        Clicked="RegistrarUsuario"
-                        HorizontalOptions="Center" />
+              Text="Registrar"
+              Clicked="RegistrarUsuario"
+              HorizontalOptions="Center"
+              BackgroundColor="Purple" />
 
                 </VerticalStackLayout>
             </VerticalStackLayout>

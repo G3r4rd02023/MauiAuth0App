@@ -10,7 +10,7 @@
 
     
     <Shell.FlyoutHeader>
-        <Image Source="logoambe.jpg" WidthRequest="120" Margin="10" BackgroundColor="MediumPurple"></Image>
+        <Image Source="ramgarlogo.jpg" WidthRequest="120" Margin="10" BackgroundColor="MediumPurple"></Image>
     </Shell.FlyoutHeader>
    
 

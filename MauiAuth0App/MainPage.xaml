@@ -10,7 +10,7 @@
             Margin="-20"
             HeightRequest="600"
             WidthRequest="330"
-            BackgroundColor="MediumPurple">
+            BackgroundColor="White">
            
 
             <Label
@@ -18,26 +18,24 @@
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
-            <StackLayout
-             x:Name="LoginView">
-                <Button 
-             x:Name="LoginBtn"
-             Text="Iniciar Sesion"
-             SemanticProperties.Hint="Click to log in"
-             Clicked="OnLoginClicked"
-             HorizontalOptions="Center"/>
-
+            <StackLayout x:Name="LoginView">
                 <Image
-             Source="logoambe.jpg"                 
-             Aspect="AspectFit"
-             SemanticProperties.Description="Cute dot net bot waving hi to you!"
-             HeightRequest="300"
-             HorizontalOptions="Center" />      
+        Source="ramgarlogo.jpg"                 
+        Aspect="AspectFit"
+        SemanticProperties.Description="Cute dot net bot waving hi to you!"
+        HeightRequest="300"
+        HorizontalOptions="Center" />
 
-
+                <Button 
+        x:Name="LoginBtn"
+        Text="Iniciar Sesión"
+        SemanticProperties.Hint="Click to log in"
+        Clicked="OnLoginClicked"
+        BackgroundColor="Purple"
+        HorizontalOptions="Center"/>
             </StackLayout>
 
-           
+
             <StackLayout
                 x:Name="HomeView"
                 IsVisible="false">
@@ -54,11 +52,10 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="User's name"
                 FontSize="18"
-                TextColor="LightPink"    
+                TextColor="Purple"   
                 HorizontalOptions="Center" />
                 
-                <Image
-                 Source="logoambe.jpg"                 
+                <Image                
                  Aspect="AspectFit"
                  SemanticProperties.Description="Cute dot net bot waving hi to you!"
                  HeightRequest="200"

@@ -5,7 +5,7 @@ namespace MauiAuth0App.Services
 {
     public class ServicioUsuario : IServicioUsuario
     {
-        private string urlApi = "http://ambetest.somee.com/api/Usuarios";
+        private string urlApi = "https://ambetest.somee.com/api/Usuarios";
 
         public async Task<List<Usuarios>> ObtenerLista()
         {

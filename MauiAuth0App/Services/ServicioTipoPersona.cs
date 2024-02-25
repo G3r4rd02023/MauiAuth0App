@@ -5,7 +5,7 @@ namespace MauiAuth0App.Services
 {
     public class ServicioTipoPersona : IServicioTipoPersona
     {
-        private string urlApi = "http://ambetest.somee.com/api/TipoPersonas";
+        private string urlApi = "https://ambetest.somee.com/api/TipoPersonas";
         public async Task<int> ObtenerIdTipoPersonaPorNombre(string tipoPersona)
         {
             try
