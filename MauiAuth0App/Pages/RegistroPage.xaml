@@ -4,141 +4,34 @@
              x:Class="MauiAuth0App.Pages.RegistroPage"
              Title="Registro">
     <ScrollView>
-        <StackLayout Spacing="10" Padding="20">
-            <VerticalStackLayout
-                Padding="0,0,0,5"
-                Spacing="15"
-                BackgroundColor="purple">
+        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" Padding="20">
+            <Image Source="ramgarlogo.jpg" HeightRequest="79" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />
 
-                <HorizontalStackLayout>
-                    
-                    <Image
-                        Source="ramgarlogo .jpg"
-                        HeightRequest="100"
-                        WidthRequest="200"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        SemanticProperties.Description="dot net bot in a race car number eight"
-                        Margin="-10" />
-                </HorizontalStackLayout>
+            <StackLayout Spacing="10" BackgroundColor="White" WidthRequest="330">
+                <Entry x:Name="TxtPrimerNombre" Placeholder="Primer nombre" />
+                <Entry x:Name="TxtSegundoNombre" Placeholder="Segundo nombre" />
+                <Entry x:Name="TxtPrimerApellido" Placeholder="Primer apellido" />
+                <Entry x:Name="TxtSegundoApellido" Placeholder="Segundo apellido" />
+                <Entry x:Name="TxtCorreo" Placeholder="Correo Electronico" />
 
-                <VerticalStackLayout
-                    Spacing="20"
-                    BackgroundColor="White"
-                    Margin="-20"
-                    HeightRequest="600"
-                    WidthRequest="330">
+                <Label Text="Fecha de Nacimiento:" TextColor="Black" HorizontalTextAlignment="Start" />
+                <DatePicker x:Name="DpFechaNacimiento" TextColor="Black" />
 
-                   
+                <Label Text="Género:" TextColor="Black" HorizontalTextAlignment="Start" />
+                <FlexLayout Direction="Row" AlignItems="Center">
+                    <Label Text="M:" TextColor="Black"/>
+                    <CheckBox x:Name="ChkMasculino" Color="Black" />
+                    <Label Text="F:" TextColor="Black"/>
+                    <CheckBox x:Name="ChkFemenino" Color="Black" />
+                </FlexLayout>
 
-                    <Entry
-                        x:Name="TxtPrimerNombre"
-                        Margin="-10"
-                        BackgroundColor="White"
-                        Keyboard="Text"
-                        Placeholder="Primer nombre"
-                        PlaceholderColor="Gray"
-                        TextColor="Black" 
-                        />
-                                                             
+                <Picker x:Name="pickerRol" Title="Seleccionar Rol" TextColor="Black" />
+                <Picker x:Name="pickerInstituto" Title="Seleccionar Instituto" TextColor="Black" />
+                <Picker x:Name="pickerTipoPersona" Title="Seleccionar Tipo de Persona" TextColor="Black" />
 
-                    <Entry
-                        x:Name="TxtSegundoNombre"
-                        BackgroundColor="White"
-                        Keyboard="Text"
-                        Placeholder="Segundo nombre"
-                        PlaceholderColor="Gray"
-                        TextColor="Black"
-                        Margin="-10"
-                        />
-
-                   
-
-                    <Entry
-                        x:Name="TxtPrimerApellido"
-                        BackgroundColor="White"
-                        Keyboard="Text"
-                        Placeholder="Primer apellido"
-                        PlaceholderColor="Gray"
-                        TextColor="Black"
-                        Margin="-10"
-                        />
-
-                   
-
-                    <Entry
-                        x:Name="TxtSegundoApellido"
-                        BackgroundColor="White"
-                        Keyboard="Text"
-                        Placeholder="Segundo apellido"
-                        PlaceholderColor="Gray"
-                        TextColor="Black"
-                        Margin="-10"
-                        />
-
-                    <Entry
-                        x:Name="TxtCorreo"
-                        BackgroundColor="White"
-                        Keyboard="Text"
-                        Placeholder="Correo Electronico"
-                        PlaceholderColor="Gray"
-                        TextColor="Black"
-                        Margin="-10"
-                        />
-
-                    <Label
-                        Margin="-2"
-                        Text="Fecha de Nacimiento:"
-                        TextColor="Black"
-                        HorizontalTextAlignment="Start"
-                        SemanticProperties.HeadingLevel="Level1" 
-                        />
-
-                    <DatePicker
-                        x:Name="DpFechaNacimiento"                        
-                        BackgroundColor="White"                                             
-                        TextColor="Black"
-                        Margin="-10"/>
-
-                    <Label
-                        Margin="-2"
-                        Text="Género:"
-                        TextColor="Black"
-                        HorizontalTextAlignment="Start"
-                        SemanticProperties.HeadingLevel="Level1" />
-
-                    <HorizontalStackLayout Spacing="10">
-                        <Label
-                            Text="M:"
-                            TextColor="Black"/>
-
-                        <CheckBox
-                            x:Name="ChkMasculino"
-                            Color="Black"
-                            Margin="-10"/>
-
-                        <Label
-                            Text="F:"
-                            TextColor="Black"/>
-
-                        <CheckBox
-                            x:Name="ChkFemenino"
-                            Color="Black"
-                            Margin="-10"/>
-                    </HorizontalStackLayout>
-
-                    <Picker x:Name="pickerRol" Title="Seleccionar Rol" Margin="-10" TextColor="Black"/>
-                    <Picker x:Name="pickerInstituto" Title="Seleccionar Instituto" Margin="-10" TextColor="Black"/>
-                    <Picker x:Name="pickerTipoPersona" Title="Seleccionar Tipo de Persona" Margin="-10" TextColor="Black"/>
-
-                    <Button
-              Text="Registrar"
-              Clicked="RegistrarUsuario"
-              HorizontalOptions="Center"
-              BackgroundColor="Purple" />
-
-                </VerticalStackLayout>
-            </VerticalStackLayout>
-        </StackLayout>
+                <Button Text="Registrar" Clicked="RegistrarUsuario" HorizontalOptions="Center" BackgroundColor="Purple" />
+            </StackLayout>
+        </FlexLayout>
     </ScrollView>
+    
 </ContentPage>

@@ -11,26 +11,24 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Margin="10">
                 <CollectionView ItemsSource="{Binding Usuarios}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="10" Orientation="Horizontal" BackgroundColor="LightGray" Margin="5">
-                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Label Text="{Binding NombreUsuario}" FontAttributes="Bold" HorizontalOptions="Center" />
-                                    <Label Text="{Binding CorreoElectronico}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding Estado}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding FechaUltimaConexion}" HorizontalOptions="Center" />
+                            <Frame BackgroundColor="#F5F5F5" BorderColor="Purple" Margin="5" Padding="10" HasShadow="True">
+                                <StackLayout Spacing="5">
+                                    <Label Text="{Binding NombreUsuario}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding CorreoElectronico}" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Estado}" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding FechaUltimaConexion, StringFormat='Última conexión: {0:d}'}" HorizontalOptions="CenterAndExpand" />
                                 </StackLayout>
-                            </StackLayout>
+                            </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
-
-
-
-
 </ContentPage>
+
+

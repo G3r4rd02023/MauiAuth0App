@@ -6,18 +6,14 @@ namespace MauiAuth0App.Pages;
 
 public partial class RegistroPage : ContentPage
 {
-    private readonly IServicioRoles _servicioRoles;
-    private readonly IServicioInstituto _servicioInstituto;
-    private readonly IServicioTipoPersona _servicioTipoPersona;
+   
+    
+    
     private readonly string _usuario;
 
-    public RegistroPage(IServicioRoles servicioRoles, IServicioInstituto servicioInstituto, IServicioTipoPersona servicioTipoPersona,
-        string usuario)
+    public RegistroPage(string usuario)
     {
-        InitializeComponent();
-        _servicioRoles = servicioRoles;
-        _servicioInstituto = servicioInstituto;
-        _servicioTipoPersona = servicioTipoPersona;
+        InitializeComponent();                       
         _usuario = usuario;
         CargarRoles();
         CargarInstitutos();
@@ -30,7 +26,10 @@ public partial class RegistroPage : ContentPage
         try
         {
             // Obtener la lista de roles desde el servicio
-            var roles = await _servicioRoles.ObtenerLista();
+            ServicioRoles servicioRoles = new();
+            var roles = await servicioRoles.ObtenerLista();
+            
+
 
             // Asignar la lista de roles como la fuente de datos del Picker
             pickerRol.ItemsSource = roles.Select(r => r.Descripcion).ToList();
@@ -46,8 +45,10 @@ public partial class RegistroPage : ContentPage
     {
         try
         {
-            var institutos = await _servicioInstituto.ObtenerLista();
-            pickerInstituto.ItemsSource = institutos.Select(r => r.NombreInstituto).ToList();
+            ServicioInstituto servicioInstituto = new();
+            List<InstitutosViewModel> lista = await servicioInstituto.ObtenerLista();
+            
+            pickerInstituto.ItemsSource = lista.Select(r => r.NombreInstituto).ToList();
         }
         catch (Exception ex)
         {
@@ -59,7 +60,8 @@ public partial class RegistroPage : ContentPage
     {
         try
         {
-            var tipoPersonas = await _servicioTipoPersona.ObtenerLista();
+            ServicioTipoPersona servicioTipoPersona = new();
+            var tipoPersonas = await servicioTipoPersona.ObtenerLista();
             pickerTipoPersona.ItemsSource = tipoPersonas.Select(r => r.TipoPersona).ToList();
         }
         catch (Exception ex)
@@ -96,9 +98,12 @@ public partial class RegistroPage : ContentPage
             string correoElectronico = TxtCorreo.Text;
             DateTime fechaNacimiento = DpFechaNacimiento.Date;
             string genero = ChkMasculino.IsChecked ? "Masculino" : "Femenino";
-            int idRol = await _servicioRoles.ObtenerIdRolPorNombre(pickerRol.SelectedItem.ToString());
-            int idInstituto = await _servicioInstituto.ObtenerIdInstitutoPorNombre(pickerInstituto.SelectedItem.ToString());
-            int idTipoPersona = await _servicioTipoPersona.ObtenerIdTipoPersonaPorNombre(pickerTipoPersona.SelectedItem.ToString());
+            ServicioRoles servicioRoles = new();
+            int idRol = await servicioRoles.ObtenerIdRolPorNombre(pickerRol.SelectedItem.ToString());
+            ServicioInstituto servicioInstituto = new();
+            int idInstituto = await servicioInstituto.ObtenerIdInstitutoPorNombre(pickerInstituto.SelectedItem.ToString());
+            ServicioTipoPersona servicioTipoPersona = new();
+            int idTipoPersona = await servicioTipoPersona.ObtenerIdTipoPersonaPorNombre(pickerTipoPersona.SelectedItem.ToString());
             string usuario = _usuario;
 
             //validar fecha nacimiento
@@ -150,8 +155,8 @@ public partial class RegistroPage : ContentPage
             // Convertir el objeto usuario a formato JSON
             string personaJson = System.Text.Json.JsonSerializer.Serialize(persona);
 
-
-            bool usuarioExiste = await _servicioRoles.UsuarioExiste(_usuario);
+            
+            bool usuarioExiste = await ServicioRoles.UsuarioExiste(_usuario);
             if (usuarioExiste)
             {
                 await DisplayAlert("Error", "El usuario ya está registrado.", "OK");
@@ -169,7 +174,7 @@ public partial class RegistroPage : ContentPage
 
                     await DisplayAlert("Éxito", "Usuario registrado correctamente", "OK");
 
-                    int idUsuario = await _servicioRoles.ObtenerIdUsuario(_usuario);
+                    int idUsuario = await ServicioRoles.ObtenerIdUsuario(_usuario);
 
                     ServicioBitacora.AgregarRegistro(idUsuario, idInstituto, "Registro", "Usuario");
 

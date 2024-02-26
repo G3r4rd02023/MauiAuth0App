@@ -3,9 +3,9 @@ using System.Text.Json;
 
 namespace MauiAuth0App.Services
 {
-    public class ServicioTipoPersona : IServicioTipoPersona
+    public class ServicioTipoPersona 
     {
-        private string urlApi = "https://ambetest.somee.com/api/TipoPersonas";
+        private readonly string urlApi = "https://ambetest.somee.com/api/TipoPersonas";
         public async Task<int> ObtenerIdTipoPersonaPorNombre(string tipoPersona)
         {
             try

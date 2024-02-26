@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace MauiAuth0App.Services
 {
-    public class ServicioInstituto : IServicioInstituto
+    public class ServicioInstituto 
     {
         private string urlApi = "https://ambetest.somee.com/api/Institutos";
         public async Task<int> ObtenerIdInstitutoPorNombre(string nombreInstituto)
