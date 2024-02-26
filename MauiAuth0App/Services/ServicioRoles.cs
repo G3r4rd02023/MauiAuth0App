@@ -1,19 +1,12 @@
 ﻿using MauiAuth0App.Models;
-using MauiAuth0App.ViewModels;
 using System.Text.Json;
 
 namespace MauiAuth0App.Services
 {
-    public class ServicioRoles:IServicioRoles
+    public class ServicioRoles
     {
-        private string urlApi = "https://ambetest.somee.com/api/Roles";
-        private readonly IServicioUsuario _servicioUsuario;
-
-        public ServicioRoles(IServicioUsuario servicioUsuario)
-        {
-            _servicioUsuario = servicioUsuario;
-        }
-
+        private readonly string urlApi = "https://ambetest.somee.com/api/Roles";
+      
         public async Task<List<Roles>> ObtenerLista()
         {
             var client = new HttpClient();
@@ -54,11 +47,12 @@ namespace MauiAuth0App.Services
             }
         }
 
-        public async Task<int> ObtenerIdUsuario(string usuario)
+        public static async Task<int> ObtenerIdUsuario(string usuario)
         {
             try
             {
-                var usuarios = await _servicioUsuario.ObtenerLista();
+                ServicioUsuario servicioUsuario = new();
+                var usuarios = await servicioUsuario.ObtenerLista();
                 var user = usuarios.FirstOrDefault(u => u.Usuario == usuario);
                 return user != null ? user.IdUsuario : -1;
             }
@@ -70,24 +64,25 @@ namespace MauiAuth0App.Services
             }
         }
 
-        public async Task<bool> UsuarioExiste(string usuario)
+        public static async Task<bool> UsuarioExiste(string usuario)
         {
             try
             {
-                var usuarios = await _servicioUsuario.ObtenerLista();
+                ServicioUsuario servicioUsuario = new();
+                var usuarios = await servicioUsuario.ObtenerLista();
                 var user = usuarios.FirstOrDefault(u => u.Usuario == usuario);
-               
+
                 if (user != null)
-                {                   
+                {
                     return true;
                 }
                 else
-                {                    
+                {
                     return false;
                 }
             }
             catch (Exception ex)
-            {               
+            {
                 Console.WriteLine($"Error al obtener los usuarios: {ex.Message}");
                 return false;
             }

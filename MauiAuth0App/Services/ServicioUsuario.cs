@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace MauiAuth0App.Services
 {
-    public class ServicioUsuario : IServicioUsuario
+    public class ServicioUsuario 
     {
         private string urlApi = "https://ambetest.somee.com/api/Usuarios";
 
