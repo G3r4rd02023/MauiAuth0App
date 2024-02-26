@@ -1,5 +1,4 @@
 ﻿using MauiAuth0App.Auth0;
-using MauiAuth0App.Pages;
 
 namespace MauiAuth0App
 {
@@ -10,7 +9,10 @@ namespace MauiAuth0App
         {
             InitializeComponent();
             auth0Client = client;
-            MainPage = new LoginPage(auth0Client);
+            MainPage = new AppShell(auth0Client);
+
+            
+
         }
     }
 }

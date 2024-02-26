@@ -12,19 +12,19 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+            <StackLayout Margin="10">
                 <CollectionView ItemsSource="{Binding Bitacoras}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="10" Orientation="Horizontal" BackgroundColor="LightGray" Margin="5">
-                                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Label Text="{Binding IdUsuario}" FontAttributes="Bold" HorizontalOptions="Center" />
-                                    <Label Text="{Binding IdInstituto}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding TipoAccion}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding Tabla}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding Fecha}" HorizontalOptions="Center" />
+                            <Frame BackgroundColor="#F5F5F5" BorderColor="Purple" Margin="5" Padding="10" HasShadow="True">
+                                <StackLayout Spacing="1">
+                                    <Label Text="{Binding IdUsuario}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding IdInstituto}" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding TipoAccion}" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Tabla}" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding Fecha}" HorizontalOptions="CenterAndExpand" />
                                 </StackLayout>
-                            </StackLayout>
+                            </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

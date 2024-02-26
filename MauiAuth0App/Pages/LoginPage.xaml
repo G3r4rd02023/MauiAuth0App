@@ -4,64 +4,13 @@
              x:Class="MauiAuth0App.Pages.LoginPage"
              Title="LoginPage">
     <ScrollView>
-        <VerticalStackLayout
-         Padding="30,0"
-         Spacing="25"            
-         Margin="-20"
-         HeightRequest="600"
-         WidthRequest="330"
-         BackgroundColor="White">
-
-
-            <Label
-             Text=""
-             Style="{StaticResource Headline}"
-             SemanticProperties.HeadingLevel="Level1" />
-
-            <StackLayout x:Name="LoginView">
-             <Image
-             Source="ramgarlogo.jpg"                 
-             Aspect="AspectFit"
-             SemanticProperties.Description="Cute dot net bot waving hi to you!"
-             HeightRequest="300"
-             HorizontalOptions="Center" />
-
-             <Button 
-             x:Name="LoginBtn"
-             Text="Iniciar Sesión"
-             SemanticProperties.Hint="Click to log in"
-             Clicked="OnLoginClicked"
-             BackgroundColor="Purple"
-             HorizontalOptions="Center"/>
-            </StackLayout>
-
-
-            <StackLayout
-             x:Name="HomeView"
-             IsVisible="false">
-
-                <Image
-             x:Name="UserPictureImg"
-             SemanticProperties.Description="User's picture"
-             HeightRequest="200"
-             HorizontalOptions="Center" />
-
-                <Label 
-             x:Name="UsernameLbl"
-             Text=""
-             SemanticProperties.HeadingLevel="Level2"
-             SemanticProperties.Description="User's name"
-             FontSize="18"
-             TextColor="Purple"   
-             HorizontalOptions="Center" />
-
-                <Image                
-              Aspect="AspectFit"
-              SemanticProperties.Description="Cute dot net bot waving hi to you!"
-              HeightRequest="200"
-              HorizontalOptions="Center" />
-            </StackLayout>
+        <VerticalStackLayout>
+            <Image
+          Source="ramgarlogo.jpg"                 
+          Aspect="AspectFit"
+          SemanticProperties.Description="Cute dot net bot waving hi to you!"
+          HeightRequest="300"
+          HorizontalOptions="Center" />
         </VerticalStackLayout>
-
     </ScrollView>
 </ContentPage>

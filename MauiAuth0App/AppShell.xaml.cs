@@ -5,6 +5,7 @@ namespace MauiAuth0App
 {
     public partial class AppShell : Shell
     {
+
         private readonly Auth0Client auth0Client;
         public AppShell(Auth0Client client)
         {
@@ -18,10 +19,9 @@ namespace MauiAuth0App
             if (answer)
             {
 
-                
-                Preferences.Remove("accessToken");
-                Application.Current.MainPage = new LoginPage(auth0Client);
-                //await Navigation.PushAsync(new LoginPage(auth0Client));
+
+                Preferences.Set("logueado", string.Empty);
+                Application.Current.MainPage = new MainPage(auth0Client);
             }
         }
     }
