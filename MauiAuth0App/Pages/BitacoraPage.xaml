@@ -4,12 +4,12 @@
              xmlns:viewModels="clr-namespace:MauiAuth0App.ViewModels"
              x:Class="MauiAuth0App.Pages.BitacoraPage"
              Title="Bitacora">
-    
+
     <ContentPage.BindingContext>
         <viewModels:BitacoraViewModel />
     </ContentPage.BindingContext>
 
-    
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="10">
@@ -31,6 +31,4 @@
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
-
-
 </ContentPage>
