@@ -8,11 +8,11 @@ namespace MauiAuth0App
         public App(Auth0Client client)
         {
             InitializeComponent();
-            auth0Client = client;
+           
+            auth0Client = client;            
             MainPage = new AppShell(auth0Client);
-
             
-
+                            
         }
     }
 }

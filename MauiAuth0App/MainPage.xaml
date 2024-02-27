@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiAuth0App.MainPage">
-
+             x:Class="MauiAuth0App.MainPage"
+              Shell.NavBarIsVisible="False">
+            
    
     <ScrollView>
         <VerticalStackLayout
@@ -19,7 +20,8 @@
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
-            <StackLayout x:Name="LoginView">
+            <StackLayout x:Name="LoginView"
+                        >
                 <Image
         Source="ramgarlogo.jpg"                 
         Aspect="AspectFit"
@@ -39,7 +41,8 @@
 
             <StackLayout
                 x:Name="HomeView"
-                IsVisible="false">
+                IsVisible="false"
+               >
 
                 <Image
                 x:Name="UserPictureImg"

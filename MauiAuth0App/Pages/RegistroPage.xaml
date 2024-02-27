@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAuth0App.Pages.RegistroPage"
-             Title="Registro">
+             Title="Registro"
+             Shell.NavBarIsVisible="False">
     <ScrollView>
         <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" Padding="20">
             <Image Source="ramgarlogo.jpg" HeightRequest="79" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />
@@ -12,7 +13,7 @@
                 <Entry x:Name="TxtSegundoNombre" Placeholder="Segundo nombre" />
                 <Entry x:Name="TxtPrimerApellido" Placeholder="Primer apellido" />
                 <Entry x:Name="TxtSegundoApellido" Placeholder="Segundo apellido" />
-                <Entry x:Name="TxtCorreo" Placeholder="Correo Electronico" />
+                <Entry x:Name="TxtCorreo" Placeholder="Correo Electronico" Keyboard="Email"/>
 
                 <Label Text="Fecha de Nacimiento:" TextColor="Black" HorizontalTextAlignment="Start" />
                 <DatePicker x:Name="DpFechaNacimiento" TextColor="Black" />

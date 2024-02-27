@@ -1,3 +1,4 @@
+using MauiAuth0App.Auth0;
 using MauiAuth0App.Models;
 using MauiAuth0App.Services;
 using System.Text;
@@ -6,15 +7,16 @@ namespace MauiAuth0App.Pages;
 
 public partial class RegistroPage : ContentPage
 {
-   
-    
-    
+
+
+    private readonly Auth0Client auth0Client;
     private readonly string _usuario;
 
-    public RegistroPage(string usuario)
+    public RegistroPage(string usuario,Auth0Client client)
     {
         InitializeComponent();                       
         _usuario = usuario;
+        auth0Client = client;
         CargarRoles();
         CargarInstitutos();
         CargarTipoPersonas();
@@ -177,8 +179,8 @@ public partial class RegistroPage : ContentPage
                     int idUsuario = await ServicioRoles.ObtenerIdUsuario(_usuario);
 
                     ServicioBitacora.AgregarRegistro(idUsuario, idInstituto, "Registro", "Usuario");
-
-                    await Navigation.PushAsync(new UsuariosPage());
+                    
+                    await Navigation.PushAsync(new MainPage(auth0Client));
 
                 }
                 else

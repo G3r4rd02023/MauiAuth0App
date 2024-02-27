@@ -34,5 +34,10 @@ namespace MauiAuth0App.Auth0
         {
             return await oidcClient.LoginAsync();
         }
+
+        public async Task<LogoutResult>LogoutAsync()
+        {
+            return await oidcClient.LogoutAsync();
+        }
     }
 }

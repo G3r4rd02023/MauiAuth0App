@@ -18,8 +18,9 @@
         Icon="home.svg"
         Title="Inicio"        
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    
+        Route="MainPage"         
+        />
+   
 
     <ShellContent
         Icon="clipboard.svg"
