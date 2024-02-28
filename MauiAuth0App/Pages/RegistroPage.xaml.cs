@@ -174,7 +174,8 @@ public partial class RegistroPage : ContentPage
                 if (response.IsSuccessStatusCode)
                 {
 
-                    await DisplayAlert("Éxito", "Usuario registrado correctamente", "OK");
+                    await DisplayAlert("Éxito", "Usuario registrado correctamente, tu perfil necesita ser aprobado por el administrador"
+                        , "OK");
 
                     int idUsuario = await ServicioRoles.ObtenerIdUsuario(_usuario);
 

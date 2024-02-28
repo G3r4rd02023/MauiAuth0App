@@ -38,15 +38,14 @@ namespace MauiAuth0App
                 if (isFirstLogin)
                 {
                     
-                    await Navigation.PushAsync(new RegistroPage(usuario!,auth0Client));                    
+                    await Navigation.PushAsync(new RegistroPage(usuario!,auth0Client));                                       
                     LoginView.IsVisible = false;
                     HomeView.IsVisible = true;
                     Shell.SetNavBarIsVisible(this, true);
-                    //App.Current.MainPage = new AppShell();
+                                   
                 }
                 else
                 {
-
                     LoginView.IsVisible = false;
                     HomeView.IsVisible = true;                   
                     Shell.SetNavBarIsVisible(this, true);

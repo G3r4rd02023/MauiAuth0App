@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAuth0App.Pages.EditarUsuarioPage"
+             Title="EditarUsuarioPage">
+    <ScrollView>
+        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" Padding="20">
+            <Image Source="ramgarlogo.jpg" HeightRequest="79" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <StackLayout Spacing="10" BackgroundColor="White" WidthRequest="330">
+               
+                <Entry x:Name="TxtUsuario"  IsEnabled="False" />
+                <Entry x:Name="TxtNombreUsuario"  IsEnabled="False" />
+                <Entry x:Name="TxtCorreo"  Keyboard="Email" IsEnabled="False"/>
+                <Entry x:Name="TxtFechaUltimaConexion"   IsEnabled="False"/>
+                <Picker x:Name="pickerRol" Title="Seleccionar Rol" TextColor="Black" />
+                
+                <Picker x:Name="pickerEstado" Title="Seleccionar Estado" TextColor="Black" />
+                
+
+                <Button Text="Guardar" Clicked="EditarUsuario" HorizontalOptions="Center" BackgroundColor="Purple" />
+            </StackLayout>
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>

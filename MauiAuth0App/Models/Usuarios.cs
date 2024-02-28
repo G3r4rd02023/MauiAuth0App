@@ -18,6 +18,7 @@ namespace MauiAuth0App.Models
 
         [JsonPropertyName("nombreUsuario")]
         public string? NombreUsuario { get; set; }
+        public string? Contraseña { get; set; }
 
         [JsonPropertyName("correoElectronico")]
         public string? CorreoElectronico { get; set; }
@@ -31,6 +32,17 @@ namespace MauiAuth0App.Models
         [JsonPropertyName("fechaUltimaConexion")]
         public DateTime? FechaUltimaConexion { get; set; }
 
-        
+        [JsonPropertyName("creadoPor")]
+        public string? CreadoPor { get; set; }
+
+        [JsonPropertyName("fechaCreacion")]
+        public DateTime? FechaCreacion { get; set; }
+
+        [JsonPropertyName("modificadoPor")]
+        public string? ModificadoPor { get; set; }
+
+        [JsonPropertyName("fechaModificacion")]
+        public DateTime? FechaModificacion { get; set; }
+
     }
 }

@@ -6,11 +6,18 @@
     <ScrollView>
         <VerticalStackLayout>
             <Image
-          Source="ramgarlogo.jpg"                 
-          Aspect="AspectFit"
-          SemanticProperties.Description="Cute dot net bot waving hi to you!"
-          HeightRequest="300"
-          HorizontalOptions="Center" />
+              Source="ramgarlogo.jpg"                 
+              Aspect="AspectFit"
+              SemanticProperties.Description="Cute dot net bot waving hi to you!"
+              HeightRequest="300"
+              HorizontalOptions="Center" />
+
+            <Label
+            Text="Tu perfil aún está pendiente de aprobación"
+            FontSize="18"
+            TextColor="Black"
+            HorizontalTextAlignment="Center"
+            Margin="0,20,0,0" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

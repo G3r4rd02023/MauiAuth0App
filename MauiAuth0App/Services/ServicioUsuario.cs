@@ -41,6 +41,22 @@ namespace MauiAuth0App.Services
                 //envia a registro
                 return true; 
             }
-        }        
+        } 
+        
+        public async Task<bool> ValidarUsuarioActivo(string usuario)
+        {
+            var listaUsuarios = await ObtenerLista();
+
+            var usuarioEncontrado = listaUsuarios.FirstOrDefault(u => u.NombreUsuario == usuario || u.Usuario == usuario);
+
+            if (usuarioEncontrado!.Estado == "Activo")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

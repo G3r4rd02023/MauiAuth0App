@@ -1,5 +1,6 @@
 using MauiAuth0App.Models;
 using MauiAuth0App.ViewModels;
+using System.Text;
 using System.Text.Json;
 
 namespace MauiAuth0App.Pages;
@@ -33,4 +34,21 @@ public partial class UsuariosPage : ContentPage
 
         return JsonSerializer.Deserialize<List<Usuarios>>(responseBody);
     }
+
+    private async void EditarUsuario_Clicked(object sender, EventArgs e)
+    {
+        var boton = (Button)sender;
+        var usuario = boton.BindingContext as Usuarios;
+
+        if (usuario != null)
+        {
+            // Navegar a la página de edición de usuario y pasar el usuario como parámetro
+            await Navigation.PushAsync(new EditarUsuarioPage(usuario));
+        }
+        else
+        {
+            await DisplayAlert("Error", "No se pudo obtener el usuario para editar", "OK");
+        }
+    }
+
 }
