@@ -31,7 +31,7 @@
 
                 <Button 
         x:Name="LoginBtn"
-        Text="Iniciar Sesión"
+        Text="Iniciar "
         SemanticProperties.Hint="Click to log in"
         Clicked="OnLoginClicked"
         BackgroundColor="Purple"
@@ -56,7 +56,8 @@
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="User's name"
                 FontSize="18"
-                TextColor="Purple"   
+                TextColor="Purple"  
+                FontFamily="Your Name" 
                 HorizontalOptions="Center" />
 
                 <Image                
