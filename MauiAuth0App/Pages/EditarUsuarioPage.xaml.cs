@@ -113,6 +113,9 @@ public partial class EditarUsuarioPage : ContentPage
             {
                 await DisplayAlert("Éxito", "Usuario actualizado correctamente", "OK");
 
+                int userId = await ServicioRoles.ObtenerIdUsuario(usuario!);
+
+                ServicioBitacora.AgregarRegistro(userId, 1, "Editó", "Usuarios");
                 // Aquí puedes manejar la navegación de regreso o a otra página si es necesario
                 await Navigation.PopAsync(); // Por ejemplo, regresar a la página anterior
             }

@@ -8,7 +8,7 @@ namespace MauiAuth0App.Models
         public int IdUsuario { get; set; }
 
         [JsonPropertyName("idInstituto")]
-        public int IdInstituto { get; set; }
+        public int? IdInstituto { get; set; }
 
         [JsonPropertyName("tipoAccion")]
         public string? TipoAccion { get; set; }
