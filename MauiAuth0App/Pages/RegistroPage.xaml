@@ -26,7 +26,7 @@
                     <CheckBox x:Name="ChkFemenino" Color="Black" />
                 </FlexLayout>
 
-                <Picker x:Name="pickerRol" Title="Seleccionar Rol" TextColor="Black" />
+               
                 <Picker x:Name="pickerInstituto" Title="Seleccionar Instituto" TextColor="Black" />
                 <Picker x:Name="pickerTipoPersona" Title="Seleccionar Tipo de Persona" TextColor="Black" />
 

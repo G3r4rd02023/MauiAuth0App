@@ -16,32 +16,13 @@ public partial class RegistroPage : ContentPage
     {
         InitializeComponent();                       
         _usuario = usuario;
-        auth0Client = client;
-        CargarRoles();
+        auth0Client = client;       
         CargarInstitutos();
         CargarTipoPersonas();
 
     }
 
-    private async void CargarRoles()
-    {
-        try
-        {
-            // Obtener la lista de roles desde el servicio
-            ServicioRoles servicioRoles = new();
-            var roles = await servicioRoles.ObtenerLista();
-            
-
-
-            // Asignar la lista de roles como la fuente de datos del Picker
-            pickerRol.ItemsSource = roles.Select(r => r.Descripcion).ToList();
-        }
-        catch (Exception ex)
-        {
-            // Manejar cualquier excepción que pueda ocurrir al obtener los roles
-            await DisplayAlert("Error", "Hubo un problema al cargar los roles: " + ex.Message, "OK");
-        }
-    }
+   
 
     private async void CargarInstitutos()
     {
@@ -77,10 +58,7 @@ public partial class RegistroPage : ContentPage
 
         try
         {
-            if (pickerRol.SelectedItem == null || string.IsNullOrEmpty(pickerRol.SelectedItem.ToString()))
-            {
-                await DisplayAlert("Error", "Por favor, selecciona un rol.", "OK");
-            }
+           
 
             if (pickerInstituto.SelectedItem == null || string.IsNullOrEmpty(pickerInstituto.SelectedItem.ToString()))
             {
@@ -101,7 +79,7 @@ public partial class RegistroPage : ContentPage
             DateTime fechaNacimiento = DpFechaNacimiento.Date;
             string genero = ChkMasculino.IsChecked ? "Masculino" : "Femenino";
             ServicioRoles servicioRoles = new();
-            int idRol = await servicioRoles.ObtenerIdRolPorNombre(pickerRol.SelectedItem.ToString());
+            int idRol = await servicioRoles.ObtenerIdRolPorNombre(pickerTipoPersona.SelectedItem.ToString());
             ServicioInstituto servicioInstituto = new();
             int idInstituto = await servicioInstituto.ObtenerIdInstitutoPorNombre(pickerInstituto.SelectedItem.ToString());
             ServicioTipoPersona servicioTipoPersona = new();
