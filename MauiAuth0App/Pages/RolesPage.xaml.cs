@@ -32,5 +32,16 @@ public partial class RolesPage : ContentPage
         return JsonSerializer.Deserialize<List<Roles>>(responseBody);
     }
 
-
+    private async void CrearRol_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            await Navigation.PushAsync(new CrearRolPage());
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Error : {ex.Message}", "OK");
+            return;
+        }
+    }
 }

@@ -24,6 +24,7 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+                <Button Text="Crear Nuevo Rol" Clicked="CrearRol_Clicked" BackgroundColor="MediumPurple" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
