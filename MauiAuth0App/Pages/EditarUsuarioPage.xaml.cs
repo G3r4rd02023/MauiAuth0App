@@ -22,6 +22,7 @@ public partial class EditarUsuarioPage : ContentPage
         TxtNombreUsuario.Text = usuario.NombreUsuario ?? string.Empty;
         TxtCorreo.Text = usuario.CorreoElectronico ?? string.Empty;
         TxtFechaUltimaConexion.Text = usuario.FechaUltimaConexion?.ToString("dd/MM/yyyy") ?? string.Empty;
+           
     }
 
     private async void CargarRoles()
@@ -31,6 +32,8 @@ public partial class EditarUsuarioPage : ContentPage
             ServicioRoles servicioRoles = new();
             var roles = await servicioRoles.ObtenerLista();           
             pickerRol.ItemsSource = roles.Select(r => r.Descripcion).ToList();
+            var usuario = Usuario;
+            TxtRol.Text = await servicioRoles.ObtenerNombreRol(usuario.IdRol);
         }
         catch (Exception ex)
         {            
@@ -70,13 +73,7 @@ public partial class EditarUsuarioPage : ContentPage
 
             string nuevoEstado = pickerEstado.SelectedItem.ToString();
 
-            // Supongamos que ya tienes esta lógica implementada
-
-            // Validar los campos necesarios
-
-
-            // Validar la fecha de nacimiento
-
+         
 
             // Aquí deberías realizar la lógica para obtener el usuario que se va a editar, por ejemplo, mediante una consulta a la base de datos o a través de una llamada a una API
             // Supongamos que ya tienes esta lógica implementada y que has obtenido el objeto 'persona' que representa al usuario que se va a editar

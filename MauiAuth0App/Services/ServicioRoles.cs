@@ -20,7 +20,7 @@ namespace MauiAuth0App.Services
             }
             else
             {
-                // Manejar el caso cuando la solicitud no es exitosa.
+                // Manejar el caso cuando la solicitud no es exitosa.               
                 Console.WriteLine($"Error en la solicitud: {response.StatusCode}");
                 return new List<Roles>();
             }
@@ -47,6 +47,7 @@ namespace MauiAuth0App.Services
             }
         }
 
+       
         public static async Task<int> ObtenerIdUsuario(string usuario)
         {
             try
@@ -108,6 +109,21 @@ namespace MauiAuth0App.Services
             {
                 Console.WriteLine($"Error al obtener los roles: {ex.Message}");
                 return false;
+            }
+        }
+
+        public async Task<string> ObtenerNombreRol(int idRol)
+        {
+            try
+            {
+                var roles = await ObtenerLista();
+                var rolEncontrado = roles.FirstOrDefault(r => r.IdRol == idRol);
+                return rolEncontrado != null ? rolEncontrado.Descripcion : "Rol no encontrado";
+            }
+            catch(Exception ex) 
+            {
+                Console.WriteLine($"Error al obtener el nombre del rol: {ex.Message}");
+                return "Error";
             }
         }
     }

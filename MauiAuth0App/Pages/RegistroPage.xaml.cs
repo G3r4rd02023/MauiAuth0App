@@ -123,7 +123,7 @@ public partial class RegistroPage : ContentPage
                 IdInstituto = idInstituto,
                 IdTipoPersona = idTipoPersona,
                 Usuario = usuario,
-                NombreUsuario = usuario,
+                NombreUsuario = primerNombre + " " + primerApellido,
                 CorreoElectronico = usuario,
                 Contraseña = "hsdfgjhgfjbfxsl",
                 Estado = "Nuevo",

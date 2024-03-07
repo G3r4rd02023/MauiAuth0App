@@ -13,6 +13,8 @@
                 <Entry x:Name="TxtNombreUsuario"  IsEnabled="False" />
                 <Entry x:Name="TxtCorreo"  Keyboard="Email" IsEnabled="False"/>
                 <Entry x:Name="TxtFechaUltimaConexion"   IsEnabled="False"/>
+                <Entry x:Name="TxtRol"   IsEnabled="False"/>
+                
                 <Picker x:Name="pickerRol" Title="Seleccionar Rol" TextColor="Black" />
                 
                 <Picker x:Name="pickerEstado" Title="Seleccionar Estado" TextColor="Black" />

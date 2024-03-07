@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using MauiAuth0App.Services;
+using System.Text.Json.Serialization;
 
 namespace MauiAuth0App.Models
 {
@@ -27,7 +28,7 @@ namespace MauiAuth0App.Models
         public string? Estado { get; set; }
 
         [JsonPropertyName("idRol")]
-        public int? IdRol { get; set; }
+        public int IdRol { get; set; }
 
         [JsonPropertyName("fechaUltimaConexion")]
         public DateTime? FechaUltimaConexion { get; set; }
@@ -44,5 +45,13 @@ namespace MauiAuth0App.Models
         [JsonPropertyName("fechaModificacion")]
         public DateTime? FechaModificacion { get; set; }
 
+        public Task<string> NombreRol
+        {
+            get
+            {
+                ServicioRoles servicioRoles = new();
+                return servicioRoles.ObtenerNombreRol(IdRol); // Usamos ?? 0 en caso de que IdRol sea nullable
+            }
+        }
     }
 }
